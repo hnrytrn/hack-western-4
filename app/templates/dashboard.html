@@ -6,9 +6,9 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" src="../javascripts/dashboard.js">
+    <link rel="stylesheet" type="text/css" href="../css/dashboard.css">
 
-    <script type="text/script" href=""></script>
+    <script type="text/script" src="../javascripts/dashboard.js"></script>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -17,14 +17,28 @@
         <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
       </a>
     
-      <div class="navbar-item ">
+      <div class="navbar-item">
         <a class="navbar-item">
           Dashboard
         </a>
       </div>
     </nav>
 
+  <div class="columns">
+    <div id="col1" class="column is-three-quarters">
+      <div id="pool" class="mycard">
+        <p>pool</p>
+      </div>
+      <div id="graph" class="mycard">
+        <p>graph</p>
+      </div>
+    </div>
+    <div id="col2" class="column">
+      <div id="investment-account" class="mycard">
+        <p>investment-account</p>  
+      </div>
+    </div>
+  </div> 
 
-    
   </body>
 </html>

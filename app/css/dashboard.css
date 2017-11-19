@@ -1,0 +1,28 @@
+body{
+            background: #1fa2ff;
+            background: -webkit-linear-gradient(bottom,#1fa2ff,#a6ffcb);
+            background: -moz-linear-gradient(bottom,#1fa2ff,#a6ffcb);
+            background: linear-gradient(bottom,#1fa2ff,#a6ffcb);    
+            height:100vh;
+}
+.mycard{
+	background-color: white;
+	padding:10px;
+	margin:25px;
+}
+#pool{
+	height:30vh;
+}
+#graph{
+	height:50vh;
+}
+#investment-account{
+	height: calc(80vh + 25px);
+	margin-left:0px;
+}
+#col1{
+	padding-right: 0px;
+}
+#col2{
+	padding-left:0px;
+}
