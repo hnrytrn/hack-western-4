@@ -1,5 +1,8 @@
 // Import the page's CSS. Webpack will know what to do with it.
 import "../stylesheets/app.css";
+import "../css/home.css"
+import "../css/borrower.css"
+import "../css/lender.css"
 
 // Import libraries we need.
 import { default as Web3 } from 'web3';

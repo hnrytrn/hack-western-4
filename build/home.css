@@ -1,0 +1,49 @@
+ul {
+    text-align: center;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card {
+    background-color: #FFF8F0;
+}
+
+.title-container {
+    text-align: center;
+    margin: 5%;
+}
+
+#home-title {
+    color: #FFF8F0;
+}
+
+#home-subtitle {
+    color: #FFF8F0;
+}
+
+nav{
+    background: #0077aa;
+            background: -webkit-linear-gradient(left,#0077aa,#19aaaa);
+            background: -moz-linear-gradient(left,#0077aa,#19aaaa);
+            background: linear-gradient(left,#0077aa,#19aaaa);
+}
+.navbar-item{
+    color:white;
+}
+
+li {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+}
+
+body {
+    background: #0077aa;
+            background: -webkit-linear-gradient(left,#0077aa,#19aaaa);
+            background: -moz-linear-gradient(left,#0077aa,#19aaaa);
+            background: linear-gradient(left,#0077aa,#19aaaa);
+    
+    min-height: 100vh;
+}
