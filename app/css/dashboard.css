@@ -1,23 +1,27 @@
 body{
-            background: #1fa2ff;
-            background: -webkit-linear-gradient(bottom,#1fa2ff,#a6ffcb);
-            background: -moz-linear-gradient(bottom,#1fa2ff,#a6ffcb);
-            background: linear-gradient(bottom,#1fa2ff,#a6ffcb);    
-            height:100vh;
+            
+    
+            background: #fff886;
+            background: -webkit-linear-gradient(bottom right,#fff886,#dd6161);
+            background: -moz-linear-gradient(bottom right,#fff886,#dd6161);
+            background: linear-gradient(bottom right,#fff886,#dd6161);
+                
+            min-height:100vh;
 }
 .mycard{
-	background-color: white;
+    background: white;
 	padding:10px;
 	margin:25px;
 }
 #pool{
-	height:30vh;
+	height:20vh;
 }
 #graph{
-	height:50vh;
+	height:60vh;
 }
 #investment-account{
 	height: calc(80vh + 25px);
+	/*this will mess up for mobile stacked view*/
 	margin-left:0px;
 }
 #col1{
@@ -25,4 +29,17 @@ body{
 }
 #col2{
 	padding-left:0px;
+}
+#columns{
+	padding-left:50px;
+	padding-right:50px;
+}
+.pool-val{
+	font-size: 250%;
+}
+.val-col{
+	padding-left:40px;
+}
+.label{
+	margin-bottom:0px;
 }

@@ -12,7 +12,7 @@
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+    <nav class="navbar is-transparent" role="navigation" aria-label="dropdown navigation">
       <a class="navbar-item">
         <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
       </a>
@@ -23,19 +23,28 @@
         </a>
       </div>
     </nav>
-
-  <div class="columns">
+  <div id="columns" class="columns">
     <div id="col1" class="column is-three-quarters">
       <div id="pool" class="mycard">
-        <p>pool</p>
+        <label class="label">Rock Complex's pool</label>
+        <div class="columns">
+        <div class="column val-col">
+          <label class="label">Value outstanding</label>
+          <p class="pool-val">$10000</p>
+        </div>
+        <div class="column val-col">
+          <label class="label">Current expected rate of return</label>
+          <p class="pool-val">$3000</p>
+        </div>
+        </div>
       </div>
       <div id="graph" class="mycard">
-        <p>graph</p>
+        <label class="label">Investment history</label>
       </div>
     </div>
     <div id="col2" class="column">
       <div id="investment-account" class="mycard">
-        <p>investment-account</p>  
+        <label class="label">Investment account</label>  
       </div>
     </div>
   </div> 
