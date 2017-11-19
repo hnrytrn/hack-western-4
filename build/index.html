@@ -39,7 +39,7 @@
   <h3>You have <span class="black"> <span id="balance"></span> Ether</span> </h3>
 
   <br>
-  <h1>Send MetaCoin</h1>
+  <h1>Borrow Ether</h1>
   <br>
   <label for="amount">Amount:</label>
   <input type="text" id="amount" placeholder="e.g., 95"></input>
@@ -48,7 +48,7 @@
   <input type="text" id="receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input>
   <br>
   <br>
-  <button id="send" onclick="App.sendCoin()">Send MetaCoin</button>
+  <button id="send" onclick="App.depositLoan()">Send MetaCoin</button>
   <br>
   <br>
   <span id="status"></span>
@@ -163,6 +163,10 @@
         </div>
       </div>
 
+      <label for="amount">Amount:</label>
+      <input type="text" id="amount" placeholder="e.g., 95"></input>
+      <button id="send" onclick="App.requestLoan()">Get MetaCoin</button>
+      <br>
     </div>
   </section>
   </body>

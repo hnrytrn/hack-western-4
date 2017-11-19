@@ -18,14 +18,11 @@ var TestWallet = contract(test_wallet_artifacts);
 var accounts;
 var account;
 
-var contract;
-
 window.App = {
   start: function () {
     var self = this;
 
-    // Bootstrap the MetaCoin abstraction for Use.
-    MetaCoin.setProvider(web3.currentProvider);
+    // Bootstrap the TestWallet abstraction for Use.
     TestWallet.setProvider(web3.currentProvider);
     // Get the initial account balance so it can be displayed.
     web3.eth.getAccounts(function (err, accs) {
@@ -48,8 +45,8 @@ window.App = {
   },
 
   setStatus: function (message) {
-    var status = document.getElementById("status");
-    status.innerHTML = message;
+    // var status = document.getElementById("status");
+    // status.innerHTML = message;
   },
 
   getBalance: function () {
@@ -88,8 +85,8 @@ window.App = {
     var meta;
     return TestWallet.deployed().then(function (instance) {
       meta = instance;
-      self
-      instance.sendTransaction({ from: account, value: web3.toWei(amount) }).then(function(result) {
+      // localStorage.setItem("contract", instance.address);
+      instance.sendTransaction({ from: account, value: web3.toWei(amount) }).then(function (result) {
         console.log("transaction sent");
       });
     }).then(function () {
@@ -101,8 +98,30 @@ window.App = {
     });
   },
 
-  requestLoan: function() {
+  requestLoan: function () {
+    var self = this;
+    var amount = parseInt(document.getElementById("amount").value);
+    this.setStatus("Initiating request... (please wait)");
 
+    var meta;
+    return TestWallet.deployed().then(function (instance) {
+      meta = instance;
+      instance.submitTransaction(account, web3.toWei(amount), "0x", {from: account}).then(function (result) {
+        return meta.transactionCount.call({from: account});
+      }).then(function(count) {
+        console.log("Count", count.toLocaleString());
+        return meta.executeTransaction(parseInt(count.toLocaleString()) - 1, {from: account});
+      }).catch(function (e) {
+        console.log(e);
+        self.setStatus("Error sending coin; see log.");
+      });
+    }).then(function() {
+      self.setStatus("payment complete!");
+      self.getBalance();
+    }).catch(function (e) {
+      console.log(e);
+      self.setStatus("Error sending coin; see log.");
+    });
   }
 };
 
