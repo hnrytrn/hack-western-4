@@ -23,8 +23,14 @@ ul {
     color: #FFF8F0;
 }
 
-.navbar {
-    background-color: #FFF8F0;
+nav{
+    background: #0077aa;
+            background: -webkit-linear-gradient(left,#0077aa,#19aaaa);
+            background: -moz-linear-gradient(left,#0077aa,#19aaaa);
+            background: linear-gradient(left,#0077aa,#19aaaa);
+}
+.navbar-item{
+    color:white;
 }
 
 li {
@@ -34,10 +40,10 @@ li {
 }
 
 body {
-    background: #1F1C2C;
-    background: -webkit-linear-gradient(left,#1F1C2C,#928dab);
-    background: -moz-linear-gradient(left,#1F1C2C,#928dab);
-    background: linear-gradient(left,#1F1C2C,#928dab);
+    background: #0077aa;
+            background: -webkit-linear-gradient(left,#0077aa,#19aaaa);
+            background: -moz-linear-gradient(left,#0077aa,#19aaaa);
+            background: linear-gradient(left,#0077aa,#19aaaa);
     
     min-height: 100vh;
 }
