@@ -1,6 +1,6 @@
 pragma solidity ^0.4.11;
 contract TestWallet {
-    
+
     event Deposit(address indexed sender, uint value);
     event Execution(uint indexed transactionId);
     

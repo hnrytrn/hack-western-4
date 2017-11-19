@@ -8,6 +8,7 @@ import { default as contract } from 'truffle-contract'
 // Import our contract artifacts and turn them into usable abstractions.
 import metacoin_artifacts from '../../build/contracts/MetaCoin.json'
 import test_wallet_artifacts from '../../build/contracts/TestWallet.json'
+
 // MetaCoin is our usable abstraction, which we'll use through the code below.
 var MetaCoin = contract(metacoin_artifacts);
 
@@ -25,7 +26,7 @@ window.App = {
 
     // Bootstrap the MetaCoin abstraction for Use.
     MetaCoin.setProvider(web3.currentProvider);
-
+    TestWallet.setProvider(web3.currentProvider);
     // Get the initial account balance so it can be displayed.
     web3.eth.getAccounts(function (err, accs) {
       if (err != null) {
@@ -78,42 +79,21 @@ window.App = {
   //   });
   // },
 
-  sendCoin: function () {
-    var self = this;
-
-    var amount = parseInt(document.getElementById("amount").value);
-    var receiver = document.getElementById("receiver").value;
-
-    this.setStatus("Initiating transaction... (please wait)");
-
-    var meta;
-    MetaCoin.deployed().then(function (instance) {
-      meta = instance;
-      return meta.sendCoin(receiver, amount, { from: account });
-    }).then(function () {
-      self.setStatus("Transaction complete!");
-      self.refreshBalance();
-    }).catch(function (e) {
-      console.log(e);
-      self.setStatus("Error sending coin; see log.");
-    });
-  },
-
   depositLoan: function () {
     var self = this;
 
     var amount = parseInt(document.getElementById("amount").value);
-    var receiver = document.getElementById("receiver").value;
-
     this.setStatus("Initiating deposit... (please wait)");
 
     var meta;
-    TestWallet.deployed().then(function (instance) {
+    return TestWallet.deployed().then(function (instance) {
       meta = instance;
-      return meta.sendTransaction(receiver, amount, { from: account });
+      instance.sendTransaction({ from: account, value: web3.toWei(amount) }).then(function(result) {
+        console.log("transaction sent");
+      });
     }).then(function () {
       self.setStatus("Transaction complete!");
-      self.refreshBalance();
+      self.getBalance();
     }).catch(function (e) {
       console.log(e);
       self.setStatus("Error sending coin; see log.");
