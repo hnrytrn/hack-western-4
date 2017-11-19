@@ -1,16 +1,17 @@
 body{
             
     
-            background: #fff886;
-            background: -webkit-linear-gradient(bottom right,#fff886,#dd6161);
-            background: -moz-linear-gradient(bottom right,#fff886,#dd6161);
-            background: linear-gradient(bottom right,#fff886,#dd6161);
-                
+    
+            background: #0077aa;
+            background: -webkit-linear-gradient(left,#0077aa,#19aaaa);
+            background: -moz-linear-gradient(left,#0077aa,#19aaaa);
+            background: linear-gradient(left,#0077aa,#19aaaa);
+            
             min-height:100vh;
 }
 .mycard{
     background: white;
-	padding:10px;
+	padding:15px;
 	margin:25px;
 }
 #pool{
@@ -42,4 +43,16 @@ body{
 }
 .label{
 	margin-bottom:0px;
+}
+.main-label{
+	color:#bdbdbd;
+}
+nav{
+	background: #0077aa;
+            background: -webkit-linear-gradient(left,#0077aa,#19aaaa);
+            background: -moz-linear-gradient(left,#0077aa,#19aaaa);
+            background: linear-gradient(left,#0077aa,#19aaaa);
+}
+.navbar-item{
+	color:white;
 }
