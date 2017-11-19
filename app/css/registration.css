@@ -1,7 +1,8 @@
 ul {
-    text-align: center;
+    max-width: 500px;
 }
 
 .card-content {
     text-align: center;
 }
+
