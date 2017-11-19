@@ -5,3 +5,39 @@ ul {
 .card-content {
     text-align: center;
 }
+
+.card {
+    background-color: #FFF8F0;
+}
+
+.title-container {
+    text-align: center;
+    margin: 5%;
+}
+
+#home-title {
+    color: #FFF8F0;
+}
+
+#home-subtitle {
+    color: #FFF8F0;
+}
+
+.navbar {
+    background-color: #FFF8F0;
+}
+
+li {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+}
+
+body {
+    background: #1F1C2C;
+    background: -webkit-linear-gradient(left,#1F1C2C,#928dab);
+    background: -moz-linear-gradient(left,#1F1C2C,#928dab);
+    background: linear-gradient(left,#1F1C2C,#928dab);
+    
+    min-height: 100vh;
+}
