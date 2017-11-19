@@ -79,7 +79,7 @@ window.App = {
   depositLoan: function () {
     var self = this;
 
-    var amount = parseInt(document.getElementById("amount").value);
+    var amount = parseInt(document.getElementById("loan-input").value);
     this.setStatus("Initiating deposit... (please wait)");
 
     var meta;
@@ -100,7 +100,7 @@ window.App = {
 
   requestLoan: function () {
     var self = this;
-    var amount = parseInt(document.getElementById("amount").value);
+    var amount = parseInt(document.getElementById("borrow-input").value);
     this.setStatus("Initiating request... (please wait)");
 
     var meta;

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./build/home.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="./app.js"></script>
   </head>
   <body>
@@ -57,7 +58,7 @@
                         </span>
                 </p>
                 <div class="control" style="width: 65%;">
-                    <input class="input" type="text" placeholder="Amount of money">
+                    <input id="loan-input" class="input" type="text" placeholder="Amount of money">
                 </div>
             </div>
         </div>
@@ -95,7 +96,7 @@
         </div>
 
         <div class="center-div" style="margin: auto; width: 50%; padding-top: 5%;">
-            <a class="button is-link is-inverted"> Contribute! </a>
+            <a class="button is-link is-inverted" onclick="App.depositLoan()"> Contribute! </a>
         </div>
 
     </div>
