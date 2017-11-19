@@ -24,11 +24,11 @@ module.exports = {
       { from: './app/templates/home.html', to: "home.html" }
     ]),
     new CopyWebpackPlugin([
-      { from: './app/css/borrower.css', to: "borrwer.css"}
+      { from: './app/templates/borrow-form.html', to: "borrow-form.html" }
     ]),
     new CopyWebpackPlugin([
-      { from: './app/css/home.css', to: "home.css"}
-    ]),
+      { from: './app/templates/lend-form.html', to: "lend-form.html" }
+    ])
   ],
   module: {
     rules: [
