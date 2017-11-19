@@ -1,23 +1,60 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>MetaCoin - Truffle Webpack Demo w/ Frontend</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="./app.js"></script>
 </head>
+
 <body>
-  <h1>MetaCoin</h1>
-  <h2>Example Truffle Dapp</h2>
-  <h3>You have <span class="black"><span id="balance"></span> META</span></h3>
+  <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+    <a class="navbar-item">
+      <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+    </a>
+
+    <div class="navbar-item">
+      <a class="navbar-item">
+        Dashboard
+      </a>
+
+    </div>
+  </nav>
+  <br>
+  <div class="container">
+    <h1 class="title">Dashboard</h1>
+    <div class="card main-card">
+        <div class="card-content">
+          <div class="content">
+            <h1 class>Total Portfolio Value</h1>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+
+  <h3>You have <span class="black"> <span id="balance"></span> Ether</span> </h3>
 
   <br>
   <h1>Send MetaCoin</h1>
-  <br><label for="amount">Amount:</label><input type="text" id="amount" placeholder="e.g., 95"></input>
-  <br><label for="receiver">To Address:</label><input type="text" id="receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input>
-  <br><br><button id="send" onclick="App.sendCoin()">Send MetaCoin</button>
-  <br><br>
+  <br>
+  <label for="amount">Amount:</label>
+  <input type="text" id="amount" placeholder="e.g., 95"></input>
+  <br>
+  <label for="receiver">To Address:</label>
+  <input type="text" id="receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input>
+  <br>
+  <br>
+  <button id="send" onclick="App.sendCoin()">Send MetaCoin</button>
+  <br>
+  <br>
   <span id="status"></span>
   <br>
-  <span class="hint"><strong>Hint:</strong> open the browser developer console to view any errors and warnings.</span>
+  <span class="hint">
+    <strong>Hint:</strong> open the browser developer console to view any errors and warnings.</span>
 </body>
+
 </html>
