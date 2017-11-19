@@ -1,63 +1,117 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="icon" href="../images/logo.png">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lender</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/lender.css">
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>    
-    <script type="text/script" src="../javascripts/lender.js"></script>
-    <script src="./app.js"></script>
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-      <a href="home.html" class="navbar-item">
-        <b>Poor Complex</b>
+<head>
+  <link rel="icon" href="../images/logo.png">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lender</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/lender.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="./app.js"></script>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+    <a href="home.html" class="navbar-item">
+      <b>Poor Complex</b>
+    </a>
+
+    <div class="navbar-item">
+      <a href="lender.html" class="navbar-item">
+        Lender
       </a>
-    
-      <div class="navbar-item">
-        <a href="lender.html" class="navbar-item">
-          Lender
-        </a>
-      </div>
+    </div>
 
-      <div class="navbar-item">
-        <a href="borrower.html" class="navbar-item">
-          Borrower
-        </a>
-      </div>
-    </nav>
+    <div class="navbar-item">
+      <a href="borrower.html" class="navbar-item">
+        Borrower
+      </a>
+    </div>
+  </nav>
   <div id="columns" class="columns">
-    <div id="col1" class="column is-three-quarters">
+    <div id="col1" class="column">
       <div id="pool" class="mycard">
         <label class="label main-label">Poor Complex's pool</label>
         <div class="columns">
-        <div class="column val-col">
-          <label class="label">Value outstanding</label>
-          <p class="pool-val">$10000</p>
-        </div>
-        <div class="column val-col">
-          <label class="label">Current expected rate of return</label>
-          <p class="pool-val">$3000</p>
-        </div>
+          <div class="column val-col">
+            <label class="label">Total Portfolio Value</label>
+            <p id="port-val" class="pool-val"></p>
+          </div>
+          <div class="column val-col">
+              <label class="label">Total Earnings</label>
+              <p class="pool-val">0.852 Eth</p>
+            </div>
+          <div class="column val-col">
+            <label class="label">Time-weighted %</label>
+            <p class="pool-val">8%</p>
+          </div>
         </div>
       </div>
       <div id="graph" class="mycard">
         <label class="label main-label">Investment history</label>
+        <canvas id="myChart" width="400" height="150"></canvas>
       </div>
     </div>
-    <div id="col2" class="column">
+    <!-- <div id="col2" class="column">
       <div id="investment-account" class="mycard">
-        <label class="label main-label">Investment account</label>  
+        <label class="label main-label">Investment account</label>
       </div>
-    </div>
-  </div> 
+    </div> -->
+  </div>
 
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+  <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["2012", "2013", "2014", "2015", "2016", "2017"],
+        datasets: [{
+          label: 'Investments',
+          data: [2, 3, 3.4, 5, 6.6, 9],
+          backgroundColor: 'rgba(124, 182, 182, 0.2)',
+          borderColor: 'rgba(124, 182, 182, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Earnings',
+          data: [2.5, 3.3, 4, 5.6, 6.9, 9.5],
+          backgroundColor: 'rgba(255, 159, 64, 0.2)',
+          borderColor: 'rgba(255, 159, 64, 1)',
+          borderWidth: 1
+        }
+        ]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false
+            },
+            scaleLabel:
+            {
+              display: true,
+              labelString: "Ether"
+            }
+          }],
+          xAxes: [{
+            scaleLabel:
+            {
+              display: true,
+              labelString: "Years"
+            }
+          }]
+        }
+      }
+    });
+  </script>
+</body>
+
 </html>

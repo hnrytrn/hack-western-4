@@ -53,7 +53,7 @@ window.App = {
     return web3.eth.getBalance(account, function (error, result) {
       if (!error) {
         console.log(result.toNumber());
-        $("#balance").text(web3.fromWei(result, "ether").toFixed(3));
+        $("#port-val").text(web3.fromWei(result, "ether").toFixed(3));
       } else {
         console.error(error);
       }
@@ -109,7 +109,6 @@ window.App = {
       instance.submitTransaction(account, web3.toWei(amount), "0x", {from: account}).then(function (result) {
         return meta.transactionCount.call({from: account});
       }).then(function(count) {
-        console.log("Count", count.toLocaleString());
         return meta.executeTransaction(parseInt(count.toLocaleString()) - 1, {from: account});
       }).catch(function (e) {
         console.log(e);

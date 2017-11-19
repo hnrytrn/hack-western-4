@@ -28511,7 +28511,7 @@ window.App = {
     return web3.eth.getBalance(account, function (error, result) {
       if (!error) {
         console.log(result.toNumber());
-        $("#balance").text(web3.fromWei(result, "ether").toFixed(3));
+        $("#port-val").text(web3.fromWei(result, "ether").toFixed(3));
       } else {
         console.error(error);
       }
@@ -28567,13 +28567,11 @@ window.App = {
       instance.submitTransaction(account, web3.toWei(amount), "0x", {from: account}).then(function (result) {
         return meta.transactionCount.call({from: account});
       }).then(function(count) {
-        console.log("Count", count.toLocaleString());
         return meta.executeTransaction(parseInt(count.toLocaleString()) - 1, {from: account});
       }).catch(function (e) {
         console.log(e);
         self.setStatus("Error sending coin; see log.");
       });
-
     }).then(function() {
       self.setStatus("payment complete!");
       self.getBalance();
@@ -31811,7 +31809,7 @@ exports = module.exports = __webpack_require__(34)();
 
 
 // module
-exports.push([module.i, "body{\n            \n    \n    \n            background: #0077aa;\n            background: -webkit-linear-gradient(left,#0077aa,#19aaaa);\n            background: -moz-linear-gradient(left,#0077aa,#19aaaa);\n            background: linear-gradient(left,#0077aa,#19aaaa);\n            \n            min-height:100vh;\n}\n.mycard{\n    background: white;\n\tpadding:15px;\n\tmargin:25px;\n\tbox-shadow: 7px 7px 5px #50888888;\n}\n#pool{\n\theight:20vh;\n}\n#graph{\n\theight:60vh;\n}\n#investment-account{\n\theight: calc(80vh + 25px);\n\t/*this will mess up for mobile stacked view*/\n\tmargin-left:0px;\n}\n#col1{\n\tpadding-right: 0px;\n}\n#col2{\n\tpadding-left:0px;\n}\n#columns{\n\tpadding-left:50px;\n\tpadding-right:50px;\n}\n.pool-val{\n\tfont-size: 250%;\n}\n.val-col{\n\tpadding-left:40px;\n}\n.label{\n\tmargin-bottom:0px;\n}\n.main-label{\n\tcolor:#bbbbbb;\n}\nnav{\n\tbackground: #0077aa;\n            background: -webkit-linear-gradient(left,#0077aa,#19aaaa);\n            background: -moz-linear-gradient(left,#0077aa,#19aaaa);\n            background: linear-gradient(left,#0077aa,#19aaaa);\n}\n.navbar-item{\n\tcolor:white;\n}", ""]);
+exports.push([module.i, "body{\n            \n    \n    \n            background: #0077aa;\n            background: -webkit-linear-gradient(left,#0077aa,#19aaaa);\n            background: -moz-linear-gradient(left,#0077aa,#19aaaa);\n            background: linear-gradient(left,#0077aa,#19aaaa);\n            \n            min-height:100vh;\n}\n.mycard{\n    background: white;\n\tpadding:15px;\n\tmargin:25px;\n\tbox-shadow: 7px 7px 5px #50888888;\n}\n#pool{\n\theight:24vh;\n}\n#graph{\n\theight:67vh;\n}\n#investment-account{\n\theight: calc(80vh + 25px);\n\t/*this will mess up for mobile stacked view*/\n\tmargin-left:0px;\n}\n#col1{\n\tpadding-right: 0px;\n}\n#col2{\n\tpadding-left:0px;\n}\n#columns{\n\tpadding-left:50px;\n\tpadding-right:50px;\n}\n.pool-val{\n\tfont-size: 250%;\n}\n.val-col{\n\tpadding-left:40px;\n}\n.label{\n\tmargin-bottom:0px;\n}\n.main-label{\n\tcolor:#bbbbbb;\n}\nnav{\n\tbackground: #0077aa;\n            background: -webkit-linear-gradient(left,#0077aa,#19aaaa);\n            background: -moz-linear-gradient(left,#0077aa,#19aaaa);\n            background: linear-gradient(left,#0077aa,#19aaaa);\n}\n.navbar-item{\n\tcolor:white;\n}", ""]);
 
 // exports
 

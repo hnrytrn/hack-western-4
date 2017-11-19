@@ -16,10 +16,10 @@ body{
 	box-shadow: 7px 7px 5px #50888888;
 }
 #pool{
-	height:20vh;
+	height:24vh;
 }
 #graph{
-	height:60vh;
+	height:67vh;
 }
 #investment-account{
 	height: calc(80vh + 25px);
