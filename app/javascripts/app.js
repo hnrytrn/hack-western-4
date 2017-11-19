@@ -6,12 +6,7 @@ import { default as Web3 } from 'web3';
 import { default as contract } from 'truffle-contract'
 
 // Import our contract artifacts and turn them into usable abstractions.
-import metacoin_artifacts from '../../build/contracts/MetaCoin.json'
 import test_wallet_artifacts from '../../build/contracts/TestWallet.json'
-
-// MetaCoin is our usable abstraction, which we'll use through the code below.
-var MetaCoin = contract(metacoin_artifacts);
-
 var TestWallet = contract(test_wallet_artifacts);
 
 // The following code is simple to show off interacting with your contracts.
@@ -19,6 +14,8 @@ var TestWallet = contract(test_wallet_artifacts);
 // For application bootstrapping, check out window.addEventListener below.
 var accounts;
 var account;
+
+var contract;
 
 window.App = {
   start: function () {
@@ -88,6 +85,7 @@ window.App = {
     var meta;
     return TestWallet.deployed().then(function (instance) {
       meta = instance;
+      self
       instance.sendTransaction({ from: account, value: web3.toWei(amount) }).then(function(result) {
         console.log("transaction sent");
       });
@@ -98,6 +96,10 @@ window.App = {
       console.log(e);
       self.setStatus("Error sending coin; see log.");
     });
+  },
+
+  requestLoan: function() {
+
   }
 };
 
