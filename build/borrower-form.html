@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Request Funds</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/borrower.css">
+        
+    </head>
+    <body>
+            <!-- NAVBAR -->
+            <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+                <a class="navbar-item">
+                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+                </a>
+            
+                <div class="navbar-item ">
+                <a class="navbar-item">
+                    Back to Home
+                </a>
+            
+                </div>
+          </nav>
+        <section class="section">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column">
+                            <h1 class="title">
+                                Request Funds
+                            </h1>
+                            <p class="subtitle">
+                                Answer a few quick questions:
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <section class="section">
+                <div class="container">                        
+                    
+                        <label class="label"> How much do you need? </label>
+                        
+                        <div class="field has-addons">
+                                <p class="control">
+                                        <span class="select">
+                                        <select>
+                                            <option>Ξ</option>
+                                            <option>$</option>
+                                            <!-- <option>£</option>
+                                            <option>€</option>
+                                            -->
+                                        </select>
+                                        </span>
+                                </p>
+                                
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Amount of money">
+                                </div>
+                        </div>
+                    
+                    <label class="label"> How long do you need it? </label>                
+                
+                    <div class="range">
+                            <input type="range" min="1" max="7" steps="1" value="1">
+                    </div>
+                          
+                          <ul class="range-labels">
+                            <li class="active selected">1 month</li>
+                            <li>2 month</li>
+                            <li>3 month</li>
+                            <li>4 month</li>
+                            <li>5 month</li>
+                            <li>6 month</li>
+                            <li>7+ month</li>
+                          </ul>  
+
+                </div>
+
+                    <label class="label"> Quoted interest rate: </label>
+                    
+                    <div class="field">
+                            <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                I agree to the <a href="#">terms and conditions</a>
+                            </label>
+                            </div>
+                        </div>
+        </section>
+
+        <p class="card-footer-item">
+                <span>
+                    <a class="button is-link is-outlined"> Accept and Submit </a>
+                </span>
+            </p>
+
+            <script src="../javascripts/borrower.js"></script>
+    </body>
+</html>
