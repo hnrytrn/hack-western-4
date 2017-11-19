@@ -13,6 +13,7 @@ body{
     background: white;
 	padding:15px;
 	margin:25px;
+	box-shadow: 7px 7px 5px #50888888;
 }
 #pool{
 	height:20vh;
