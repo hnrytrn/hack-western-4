@@ -13,17 +13,7 @@ body{
 	margin:25px;
 	box-shadow: 7px 7px 5px #50888888;
 }
-#pool{
-	height:20vh;
-}
-#graph{
-	height:60vh;
-}
-#investment-account{
-	height: calc(80vh + 25px);
-	/*this will mess up for mobile stacked view*/
-	margin-left:0px;
-}
+
 #col1{
 	padding-right: 0px;
 }
