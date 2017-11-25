@@ -32,11 +32,7 @@ Note the mnemonic 12-word phrase printed on startup, you will need it later.
   ```bash
   truffle compile && truffle migrate
   ```
-
-4. Run node server.
-```bash
-npm run build
-```
+  
 ### Configuration
 1. In order to connect with the Ethereum network, you will need to configure MetaMask
 2. Log into the `testrpc` test accounts in MetaMask, using the 12-word phrase printed earlier.
@@ -47,7 +43,7 @@ npm run build
 
 ## Running
 
-1. Run the app.
+1. Run the Webpack server.
   ```bash
   npm run build
   ```
