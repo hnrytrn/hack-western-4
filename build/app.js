@@ -28497,14 +28497,8 @@ window.App = {
       accounts = accs;
       account = accounts[0];
 
-      // self.refreshBalance();
       self.getBalance();
     });
-  },
-
-  setStatus: function (message) {
-    // var status = document.getElementById("status");
-    // status.innerHTML = message;
   },
 
   getBalance: function () {
@@ -28518,27 +28512,10 @@ window.App = {
     })
   },
 
-  // refreshBalance: function() {
-  //   var self = this;
-
-  //   var meta;
-  //   MetaCoin.deployed().then(function(instance) {
-  //     meta = instance;
-  //     return meta.getBalance.call(account, {from: account});
-  //   }).then(function(value) {
-  //     var balance_element = document.getElementById("balance");
-  //     balance_element.innerHTML = value.valueOf();
-  //   }).catch(function(e) {
-  //     console.log(e);
-  //     self.setStatus("Error getting balance; see log.");
-  //   });
-  // },
-
   depositLoan: function () {
     var self = this;
 
     var amount = parseInt(document.getElementById("loan-input").value);
-    this.setStatus("Initiating deposit... (please wait)");
 
     var meta;
     return TestWallet.deployed().then(function (instance) {
@@ -28548,18 +28525,15 @@ window.App = {
         console.log("transaction sent");
       });
     }).then(function () {
-      self.setStatus("Transaction complete!");
       self.getBalance();
     }).catch(function (e) {
       console.log(e);
-      self.setStatus("Error sending coin; see log.");
     });
   },
 
   requestLoan: function () {
     var self = this;
     var amount = parseInt(document.getElementById("borrow-input").value);
-    this.setStatus("Initiating request... (please wait)");
 
     var meta;
     return TestWallet.deployed().then(function (instance) {
@@ -28570,14 +28544,11 @@ window.App = {
         return meta.executeTransaction(parseInt(count.toLocaleString()) - 1, {from: account});
       }).catch(function (e) {
         console.log(e);
-        self.setStatus("Error sending coin; see log.");
       });
     }).then(function() {
-      self.setStatus("payment complete!");
       self.getBalance();
     }).catch(function (e) {
       console.log(e);
-      self.setStatus("Error sending coin; see log.");
     });
   }
 };
