@@ -45,7 +45,7 @@ Note the mnemonic 12-word phrase printed on startup, you will need it later.
 
 1. Run the Webpack server.
   ```bash
-  npm run build
+  npm run dev
   ```
 The app is now served on localhost:8080
 
